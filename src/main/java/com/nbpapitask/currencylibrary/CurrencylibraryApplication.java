@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class CurrencylibraryApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(CurrencylibraryApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(CurrencylibraryApplication.class, args);
+    }
 
 }

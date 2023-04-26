@@ -52,11 +52,11 @@ public class CurrencyService {
         String url_2 = "http://api.nbp.pl/api/exchangerates/rates/C/%s/%s/?format=json".formatted(sign, localDate.toString());
         double ask = this.restTemplate.getForObject(url_2, BuyAsk.class).ask;
         double buy = 0;
+        double ask_1 = 0;
         for (Rate rate : rates_1) {
             buy += rate.mid;
         }
-
-        return new BuyAsk(buy,ask);
+        return new BuyAsk(buy, ask);
     }
 }
 
