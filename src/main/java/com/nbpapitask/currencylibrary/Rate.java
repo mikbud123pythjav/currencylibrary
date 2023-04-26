@@ -4,8 +4,8 @@ import java.sql.Date;
 import java.util.List;
 
 public class Rate {
-    public String Currency;
-    public String Code;
-    public double Mid;
+    public String currency;
+    public String code;
+    public double mid;
 }
 

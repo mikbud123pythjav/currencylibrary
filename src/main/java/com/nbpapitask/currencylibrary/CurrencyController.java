@@ -1,22 +1,26 @@
 package com.nbpapitask.currencylibrary;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 
+//@RestController
 @Controller
+@RequestMapping("/currency-library")
 public class CurrencyController {
     CurrencyRepository currencyRepository;
-    @GetMapping("/index")
-    public String getHTMLPage(){
+
+    @GetMapping("/HTML")
+    public String getHTMLPage() {
         return "index";
     }
-    @GetMapping("/sql")
-    public List<Currency> getSql(){
-        return currencyRepository.getAll();
+    @PostMapping("/save-project")
+    public String saveProjectSubmission(@ModelAttribute Currency currency) {
+
+        // TODO: save project in DB here
+
+        return "result";
     }
 }
+
 

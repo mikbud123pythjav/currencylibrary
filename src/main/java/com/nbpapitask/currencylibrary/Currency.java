@@ -1,13 +1,11 @@
 package com.nbpapitask.currencylibrary;
 
-
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
+
+import java.io.Serializable;
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
-public class Currency {
+public class Currency implements Serializable {
+    private String name;
 
 }
