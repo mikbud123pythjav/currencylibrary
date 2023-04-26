@@ -30,7 +30,7 @@ public class CurrencyController {
         return currencyService.getMinMax(sign, counting);
     }
 
-    @GetMapping("/buyAsk/{sign}/{localDate}")
+    @GetMapping(path = "/buyAsk/{sign}/{localDate}")
     public BuyAsk buyAskValue(@PathVariable String sign, @PathVariable LocalDate localDate) {
         return currencyService.getBuyAsk(sign, localDate);
     }
