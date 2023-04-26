@@ -25,13 +25,13 @@ public class CurrencyController {
         return new Average(currencyService.getRateByDateAndCurrency(sign, localDate));
     }
 
-//    @GetMapping("/minMax")
-//    public MinMax minimalMaximalValue() {
-//        return null;
-//    }
-//
-//    @GetMapping("/buyAsk")
-//    public double buyAskValue() {
-//        return 0;
+    @GetMapping(path = "/minMax/{sign}/{counting}/{localDate}")
+    public MinMax minimalMaximalValue(@PathVariable String sign, @PathVariable int counting , LocalDate localDate) {
+        return currencyService.getMinMax(sign, counting);
+    }
+
+//    @GetMapping("/buyAsk/{sign}")
+//    public BuyAsk buyAskValue(@PathVariable String sign) {
+//        return new BuyAsk(currencyService.getBuyAsk(sign));
 //    }
 }
