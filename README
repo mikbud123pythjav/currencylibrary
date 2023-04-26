@@ -1,7 +1,9 @@
-# exchange-rates-nbp API for Java [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.brzozasr/exchange-rates-nbp/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.brzozasr/exchange-rates-nbp) [![javadoc](https://javadoc.io/badge2/com.github.brzozasr/exchange-rates-nbp/javadoc.svg)](https://javadoc.io/doc/com.github.brzozasr/exchange-rates-nbp)
+# exchange-rates-nbp API for Java [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.brzozasr/exchange-rates-nbp/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.brzozasr/exchange-rates-nbp) [![javadoc](https://javadoc.io/badge2/com.github.brzozasr/exchange-rates-nbp/javadoc.svg)](https://javadoc.io/doc/com.github.mikbud123pythjav/currencylibrary)
+#### Exchange rates and gold quotations (price) NBP (Narodowy Bank Polski, National Bank of Poland) API
+***
+### News
+* Version 1.0.0 released on 26-Apr-2023.
+* Version 1.0.1 released on 26-Apr-2023.
 
-
-Hello,
-I would like to show you how to use my simple application.
-
-If 
+   Data types have been fixed and methods selecting the highest and lowest values of exchange rates and gold prices have been added
+***
