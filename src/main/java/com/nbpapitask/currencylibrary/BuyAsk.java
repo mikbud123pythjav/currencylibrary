@@ -6,8 +6,7 @@ import java.time.LocalDate;
 
 @AllArgsConstructor
 public class BuyAsk {
-    public String no;
-    public LocalDate effectiveDate;
-    public double bid;
+    public double buy;
     public double ask;
+
 }

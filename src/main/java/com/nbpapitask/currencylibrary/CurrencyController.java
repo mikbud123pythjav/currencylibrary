@@ -26,12 +26,12 @@ public class CurrencyController {
     }
 
     @GetMapping(path = "/minMax/{sign}/{counting}/{localDate}")
-    public MinMax minimalMaximalValue(@PathVariable String sign, @PathVariable int counting , LocalDate localDate) {
+    public MinMax minimalMaximalValue(@PathVariable String sign, @PathVariable int counting, @PathVariable LocalDate localDate) {
         return currencyService.getMinMax(sign, counting);
     }
 
-//    @GetMapping("/buyAsk/{sign}")
-//    public BuyAsk buyAskValue(@PathVariable String sign) {
-//        return new BuyAsk(currencyService.getBuyAsk(sign));
-//    }
+    @GetMapping("/buyAsk/{sign}/{localDate}")
+    public BuyAsk buyAskValue(@PathVariable String sign, @PathVariable LocalDate localDate) {
+        return currencyService.getBuyAsk(sign, localDate);
+    }
 }

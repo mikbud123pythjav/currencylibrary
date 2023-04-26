@@ -32,8 +32,8 @@ public class CurrencyService {
         Rate[] rates = this.restTemplate.getForObject(url, CurrencyDTO.class).rates;
         double min = Double.MAX_VALUE;
         double max = Double.MIN_VALUE;
-        for (Rate rate:
-             rates) {
+        for (Rate rate :
+                rates) {
             double value = rate.mid;
             if (value < min) {
                 min = value;
@@ -45,30 +45,19 @@ public class CurrencyService {
         return new MinMax(min, max);
     }
 
-//    public MinMax getMax(String sign, int counting) {
-//        String url = "http://api.nbp.pl/api/exchangerates/rates/A/%s/last/%s/".formatted(sign, counting);
-//        Rate[] rates = this.restTemplate.getForObject(url, CurrencyDTO.class).rates;
-//        double min = Double.MAX_VALUE;
-//        double max = Double.MIN_VALUE;
-//        Rate rate;
-//        for (rate:
-//             rates) {
-//            double value = rate.mid;
-//            if (value < min) {
-//                min = value;
-//            }
-//            if (value > max) {
-//                max = value;
-//            }
-//        }
-//        return max;
-//    }
 
-    public BuyAsk getBuyAsk(String sign) {
-        String url = "http://api.nbp.pl/api/exchangerates/rates/A/%s/last/%s/".formatted(sign);
-        Rate[] rates = this.restTemplate.getForObject(url, CurrencyDTO.class).rates;
+    public BuyAsk getBuyAsk(String sign, LocalDate localDate) {
+        String url_1 = "http://api.nbp.pl/api/exchangerates/rates/A/%s/%s/?format=json".formatted(sign, localDate.toString());
+        Rate[] rates_1 = this.restTemplate.getForObject(url_1, CurrencyDTO.class).rates;
+        String url_2 = "http://api.nbp.pl/api/exchangerates/rates/C/%s/%s/?format=json".formatted(sign, localDate.toString());
+        double ask = this.restTemplate.getForObject(url_2, BuyAsk.class).ask;
+        double buy = 0;
+        for (Rate rate : rates_1) {
+            buy += rate.mid;
+        }
 
-        return null;
+        return new BuyAsk(buy,ask);
     }
 }
+
 
