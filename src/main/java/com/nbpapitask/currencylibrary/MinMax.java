@@ -1,11 +1,10 @@
 package com.nbpapitask.currencylibrary;
 
 import lombok.AllArgsConstructor;
+import lombok.Data;
 
 @AllArgsConstructor
-public class Rate {
-    public String currency;
-    public String code;
-    public double mid;
+public class MinMax {
+    public double min;
+    public double max;
 }
-

@@ -1,26 +1,37 @@
 package com.nbpapitask.currencylibrary;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.time.LocalDate;
 
 
-//@RestController
-@Controller
+@RestController
 @RequestMapping("/currency-library")
 public class CurrencyController {
-    CurrencyRepository currencyRepository;
+    private CurrencyService currencyService;
 
-    @GetMapping("/HTML")
-    public String getHTMLPage() {
-        return "index";
+
+    @Autowired
+    public CurrencyController(CurrencyService currencyService) {
+        this.currencyService = currencyService;
     }
-    @PostMapping("/save-project")
-    public String saveProjectSubmission(@ModelAttribute Currency currency) {
 
-        // TODO: save project in DB here
-
-        return "result";
+    @GetMapping(path = "/average/{sign}/{localDate}")
+    public Average averageExchangeRate(@PathVariable String sign, @PathVariable LocalDate localDate) {
+        return new Average(currencyService.getRateByDateAndCurrency(sign, localDate));
     }
+
+//    @GetMapping("/minMax")
+//    public MinMax minimalMaximalValue() {
+//        return null;
+//    }
+//
+//    @GetMapping("/buyAsk")
+//    public double buyAskValue() {
+//        return 0;
+//    }
 }
-
-
