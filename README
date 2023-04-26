@@ -1,5 +1,42 @@
 ### CurrencyLibrary
-###Designed by Mikolaj Budzinski
+#### Designed by Mikolaj Budzinski
+
+Applications use the following technologies: SpringBoot , Java.
+
+To run the application, you need to open a Linux teminal(Intelij terminal).
+
+---Type the command:
+.mvnw clean install
+
+---The next command is:
+.\mvnw spring-boot:run
+
+---After this action, open the page:
+http://localhost:8080   
+
+---Now you can choose which of the commands you want to execute:
+*/currency-library/average/{sign}/{localDate}
+*/currency-library/minMax/{sign}/{counting}/{localDate}
+*/currency-library/buyAsk/{sign}/{localDate}
+
+---In this code, we substitute currency abbreviations under the {sign} character
+
+---In this code under the {counting} character we substitute the number of dates we want to check as provided by the task command
+
+---In this code we substitute under the {localDate} character as a date stamp in the form YYYY-MM-DD
+
+###Examples
+--First example:
+http://localhost:8080/currency-library/average/USD/2023-04-21
+
+--Second example:
+http://localhost:8080/currency-library/minMax/EUR/100/2023-04-24
+
+--Third example:
+http://localhost:8080/currency-library/buyAsk/USD/2023-04-25
+
+###Thank you for attention
+
 
 
 
